@@ -1,0 +1,532 @@
+/* =========================
+   VARIABLES GENERALES
+========================= */
+
+:root {
+
+    --color-gold: #d4af37;
+    --color-gold-light: #f0d67a;
+
+    --color-blue: #1d3557;
+    --color-blue-light: #457b9d;
+
+    --color-white: #f8f9fa;
+    --color-dark: #111827;
+
+    --color-gray: #6b7280;
+    --color-light-bg: #f3f4f6;
+
+    --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    --transition: all 0.3s ease;
+}
+
+/* =========================
+   RESET GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: 'Montserrat', sans-serif;
+
+    background-color: var(--color-white);
+
+    color: var(--color-dark);
+
+    line-height: 1.6;
+}
+
+/* =========================
+   ELEMENTOS GENERALES
+========================= */
+
+.container {
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+
+    font-size: 2.5rem;
+
+    font-family: 'Cinzel', serif;
+
+    color: var(--color-blue);
+
+    position: relative;
+
+    display: inline-block;
+}
+
+.section-title h2::after {
+
+    content: "";
+
+    width: 70%;
+
+    height: 4px;
+
+    background-color: var(--color-gold);
+
+    position: absolute;
+
+    left: 15%;
+    bottom: -10px;
+
+    border-radius: 10px;
+}
+
+img {
+
+    width: 100%;
+
+    display: block;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+    width: 100%;
+
+    background-color: rgba(17, 24, 39, 0.95);
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 999;
+
+    backdrop-filter: blur(8px);
+}
+
+.navbar {
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 20px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+
+    font-family: 'Cinzel', serif;
+
+    color: var(--color-gold);
+
+    font-size: 2rem;
+}
+
+.logo span {
+
+    color: var(--color-white);
+
+    font-size: 0.85rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.nav-links {
+
+    display: flex;
+
+    list-style: none;
+
+    gap: 30px;
+}
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: var(--color-white);
+
+    font-weight: 500;
+
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+
+    color: var(--color-gold);
+}
+
+/* =========================
+   MAIN / HERO
+========================= */
+
+.hero {
+
+    height: 100vh;
+
+    background-image: url("https://images.unsplash.com/photo-1516458464372-ee7eae24b460?q=80&w=1600&auto=format&fit=crop");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: var(--color-white);
+}
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 850px;
+}
+
+.hero-content h2 {
+
+    font-size: 4rem;
+
+    font-family: 'Cinzel', serif;
+
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+
+    font-size: 1.2rem;
+
+    margin-bottom: 35px;
+}
+
+.btn-primary {
+
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background-color: var(--color-gold);
+
+    color: var(--color-dark);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    border-radius: 6px;
+
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+
+    background-color: var(--color-gold-light);
+
+    transform: translateY(-3px);
+}
+
+/* =========================
+   HISTORIA
+========================= */
+
+.historia {
+
+    padding: 120px 0;
+
+    background-color: var(--color-light-bg);
+}
+
+.historia-content {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+.historia-text p {
+
+    margin-bottom: 20px;
+
+    color: var(--color-gray);
+
+    font-size: 1.05rem;
+}
+
+.historia-image img {
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow-soft);
+}
+
+/* =========================
+   CERVEZAS
+========================= */
+
+.cervezas {
+
+    padding: 120px 0;
+}
+
+.beer-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 35px;
+}
+
+.beer-card {
+
+    background-color: white;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-soft);
+
+    transition: var(--transition);
+}
+
+.beer-card:hover {
+
+    transform: translateY(-8px);
+}
+
+.beer-info {
+
+    padding: 25px;
+}
+
+.beer-info h3 {
+
+    margin-bottom: 15px;
+
+    color: var(--color-blue);
+
+    font-family: 'Cinzel', serif;
+}
+
+.beer-info p {
+
+    color: var(--color-gray);
+}
+
+/* =========================
+   PROCESO
+========================= */
+
+.proceso {
+
+    padding: 120px 0;
+
+    background-color: var(--color-light-bg);
+}
+
+.proceso-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+}
+
+.step {
+
+    background-color: white;
+
+    padding: 40px 25px;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow-soft);
+}
+
+.step span {
+
+    display: inline-block;
+
+    width: 60px;
+    height: 60px;
+
+    line-height: 60px;
+
+    border-radius: 50%;
+
+    background-color: var(--color-blue);
+
+    color: var(--color-gold);
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.step h3 {
+
+    margin-bottom: 15px;
+
+    color: var(--color-blue);
+}
+
+.step p {
+
+    color: var(--color-gray);
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+
+    padding: 120px 0;
+}
+
+.contact-box {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    background-color: var(--color-blue);
+
+    color: white;
+
+    padding: 50px;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow-soft);
+}
+
+.contact-box p {
+
+    margin-bottom: 12px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+
+    background-color: var(--color-dark);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+    .historia-content,
+    .beer-grid,
+    .proceso-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h2 {
+
+        font-size: 3rem;
+    }
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .nav-links {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hero-content h2 {
+
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+
+        font-size: 1rem;
+    }
+
+    .section-title h2 {
+
+        font-size: 2rem;
+    }
+
+    .contact-box {
+
+        padding: 35px 25px;
+    }
+}
